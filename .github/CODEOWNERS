@@ -1,0 +1,6 @@
+* @nperon
+*.js @nperon
+.yml @nfmperon
+/public/ @nperon
+
+
