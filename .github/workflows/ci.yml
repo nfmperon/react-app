@@ -59,6 +59,8 @@ jobs:
   report_new_dependencies:
     runs-on: ubuntu-20.04
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+    outputs:
+      output1: ${{ steps.check_for_new_dependencies.outputs }}
     steps:
       - name: Check for new dependencies
         id: check_for_new_dependencies
@@ -69,3 +71,9 @@ jobs:
         run: |
           echo "NEW DEPENDENCIES"
           echo "${{ toJSON(steps.check_for_new_dependencies) }}"
+  job2:
+    runs-on: ubuntu-20.04
+    needs: report_new_dependencies
+    steps:
+      - run: |
+          echo "${{toJSON(needs.report_new_dependencies.outputs.output1)}}"
