@@ -68,4 +68,4 @@ jobs:
       - name: New dependencies output as a comment to PR
         run: |
           echo "NEW DEPENDENCIES"
-          echo "${{ steps.check_for_new_dependencies.* }}"
+          echo "${{ steps.check_for_new_dependencies.outputs.stdout }}"
