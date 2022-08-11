@@ -62,7 +62,7 @@ jobs:
     steps:
       - name: Check for new dependencies
         id: check_for_new_dependencies
-        uses: hiwelo/new-dependencies-action@1.1.0
+        uses: hiwelo/new-dependencies-action@1.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: New dependencies output as a comment to PR
