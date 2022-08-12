@@ -1,8 +1,8 @@
-import { fromEvent } from 'rxjs';
+import { fromEvent } from "rxjs";
 import logo from "./logo.svg";
 import "./App.css";
 
-fromEvent(document, 'click').subscribe(() => console.log('document was clicked'));
+fromEvent(document, "click").subscribe(() => console.log("document was clicked"));
 
 function App() {
   return (
