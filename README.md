@@ -71,8 +71,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### New section
 
-### YAN Section
+### Command to build our github action including dependencies
 
-### A new section again
+```bash
+npx ncc build .github/actions/hello/index.js -o .github/actions/hello/dist
+```
