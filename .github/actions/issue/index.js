@@ -8,15 +8,19 @@ try {
     const assignees = core.getInput('assignees');
 
     const octokit = new github.getOctokit(token);
-    const response = await octokit.rest.issues.create({
-        owner: github.context.repo.owner,
-        repo: github.context.repo.repo,
-        title,
-        body,
-        assignees: assignees ? assignees.split('\n') : undefined
-    });
+    const run = async () => {
+        const response = await octokit.rest.issues.create({
+            owner: github.context.repo.owner,
+            repo: github.context.repo.repo,
+            title,
+            body,
+            assignees: assignees ? assignees.split('\n') : undefined
+        });
+    
+        core.setOutput('issue', JSON.stringify(response.data));    
+    }
 
-    core.setOutput('issue', JSON.stringify(response.data));
+    run();
 
 } catch (error) {
     core.setFailed(error.message);
