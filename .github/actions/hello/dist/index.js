@@ -1867,7 +1867,7 @@ try {
     core.error('Error message');
 
     const name = core.getInput('who-to-greet');
-    core.setSecret('dwdw');
+    core.setSecret(name);
 
     console.log(`Hello ${name}`);
 
