@@ -11,8 +11,8 @@ jobs:
           title: Title
           body: Body
           assignees: |
-            alialaa
-            aliala17
+            nfmperon
+            nperon
       - run: |
           echo ${{ steps.issue.outputs.issue }}
       - uses: ./.github/actions/hello
