@@ -9,7 +9,7 @@ try {
     const assignees = core.getInput('assignees');
 
     // const octokit = new github.GitHub(token);
-    const octokit = new Oktokit({
+    const octokit = new Octokit({
         auth: token
     });
     const response = octokit.issues.create({
