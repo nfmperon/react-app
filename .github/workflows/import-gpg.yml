@@ -14,7 +14,7 @@ jobs:
       - 
         name: Log Key
         run: |
-          echo "Logging"
+          echo "GPG version: $(gpg --version)"
           echo "GPG_KEY_ID: $GH_GPG_KEY_ID"
           echo "GPG_KEY_ID_LAST_EIGHT: ${GH_GPG_KEY_ID: -8}"
           echo "GPG_PRIVATE_KEY: $GH_GPG_PRIVATE_KEY"
