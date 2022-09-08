@@ -33,6 +33,4 @@ jobs:
       -
         name: Log private key
         run: |
-          gpg --export-secret-key -a ops@okp4.com
-          PVKEY=$(tty)
-          echo "PRIVATE KEY: $PVKEY"
+          ls ~/.gnupg/
