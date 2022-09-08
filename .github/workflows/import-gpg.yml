@@ -2,7 +2,7 @@ name: import-gpg
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   import-gpg:
