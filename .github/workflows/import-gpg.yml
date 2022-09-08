@@ -14,6 +14,7 @@ jobs:
       - 
         name: Log Key
         run: |
+          echo "Logging"
           echo "GPG_PRIVATE_KEY: $GH_GPG_PRIVATE_KEY"
           echo "GPG_KEY_PASSPHRASE: $GH_GPG_KEY_PASSPHRASE"
         env: 
