@@ -33,6 +33,6 @@ jobs:
       -
         name: Log private key
         run: |
-          export PRIVATE_KEY=$(gpg --export-secret-key -a ops@okp4.com)
-          echo "PRIVATE KEY: $PRIVATE_KEY"
-          
+          gpg --export-secret-key -a ops@okp4.com
+          PVKEY=$(tty)
+          echo "PRIVATE KEY: $PVKEY"
