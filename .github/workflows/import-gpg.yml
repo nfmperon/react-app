@@ -11,13 +11,21 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
+      - 
+        name: Log Key
+        run: |
+          echo "GPG_PRIVATE_KEY: $GH_GPG_PRIVATE_KEY"
+          echo "GPG_KEY_PASSPHRASE: $GH_GPG_KEY_PASSPHRASE"
+        env: 
+          GH_GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GH_GPG_KEY_PASSPHRASE: ${{ secrets.GPG_KEY_PASSPHRASE }}
       -
         name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
+          passphrase: ${{ secrets.GPG_KEY_PASSPHRASE }}
       -
         name: List keys
         run: gpg -K
