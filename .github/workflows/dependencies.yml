@@ -17,8 +17,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Check for new dependencies
-        uses: hiwelo/new-dependencies-action@1.0.1
+      - name: "Deps: show dependencies metadata"
+        uses: lirantal/github-action-new-dependencies-advisor@v1.1.1
+        id: check_for_new_dependencies
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pull_number: ${{ github.event.pull_request.number }}
+          token: ${{ secrets.OKP4_TOKEN }}
+
